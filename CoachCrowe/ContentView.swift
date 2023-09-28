@@ -9,6 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        HStack(spacing: 0) {
+            SideSelectionBar()
+            Text("主视图")
+                .ignoresSafeArea()
+                .background(Color("background"))
+        }
     }
 }
