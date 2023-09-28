@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88010FBA2AC409D9001A6F7C /* SideSelectionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88010FB92AC409D9001A6F7C /* SideSelectionBar.swift */; };
 		88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */; };
 		88B86ADA2AC3DBCC006B54E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* ContentView.swift */; };
 		88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */; };
@@ -15,8 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		88010FB92AC409D9001A6F7C /* SideSelectionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSelectionBar.swift; sourceTree = "<group>"; };
-		884DAE7D2AC507B60056B52A /* Package */ = {isa = PBXFileReference; lastKnownFileType = text; path = Package; sourceTree = SOURCE_ROOT; };
 		88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachCrowe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCroweApp.swift; sourceTree = "<group>"; };
 		88B86AD92AC3DBCC006B54E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,11 +52,9 @@
 		88B86AD62AC3DBCC006B54E4 /* CoachCrowe */ = {
 			isa = PBXGroup;
 			children = (
-				884DAE7D2AC507B60056B52A /* Package */,
-				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
 				88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */,
 				88B86AD92AC3DBCC006B54E4 /* ContentView.swift */,
-				88010FB92AC409D9001A6F7C /* SideSelectionBar.swift */,
+				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
 				88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */,
 				88B86ADE2AC3DBCD006B54E4 /* Preview Content */,
 			);
@@ -144,7 +139,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88010FBA2AC409D9001A6F7C /* SideSelectionBar.swift in Sources */,
 				88B86ADA2AC3DBCC006B54E4 /* ContentView.swift in Sources */,
 				88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */,
 			);
@@ -295,7 +289,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = NorCrowE.CoachCrowe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -335,7 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = NorCrowE.CoachCrowe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
