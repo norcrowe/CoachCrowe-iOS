@@ -9,7 +9,7 @@ import SwiftUI
 struct CoachCroweApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MasterView()
         }
     }
 }

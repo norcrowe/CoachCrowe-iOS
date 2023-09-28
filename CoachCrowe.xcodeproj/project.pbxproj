@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC42AC5384800FF7090 /* CoachCroweBasic */; };
+		88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC62AC5384D00FF7090 /* CoachCroweViewKit */; };
+		88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC82AC5385000FF7090 /* CoachCroweViewModels */; };
 		88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */; };
-		88B86ADA2AC3DBCC006B54E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* ContentView.swift */; };
+		88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* MasterView.swift */; };
 		88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */; };
-		88B86AE02AC3DBCD006B54E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADF2AC3DBCD006B54E4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		884DAE842AC51E190056B52A /* CoachCroweBasic */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoachCroweBasic; sourceTree = SOURCE_ROOT; };
+		884DAE852AC51E460056B52A /* CoachCroweViewModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewModels; sourceTree = "<group>"; };
+		884DAE862AC51E690056B52A /* CoachCroweViewKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewKit; sourceTree = "<group>"; };
 		88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachCrowe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCroweApp.swift; sourceTree = "<group>"; };
-		88B86AD92AC3DBCC006B54E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		88B86AD92AC3DBCC006B54E4 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoachCrowe.entitlements; sourceTree = "<group>"; };
-		88B86ADF2AC3DBCD006B54E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */,
+				88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */,
+				88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88413FC32AC5384800FF7090 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88B86ACB2AC3DBCC006B54E4 = {
 			isa = PBXGroup;
 			children = (
 				88B86AD62AC3DBCC006B54E4 /* CoachCrowe */,
+				884DAE842AC51E190056B52A /* CoachCroweBasic */,
+				884DAE852AC51E460056B52A /* CoachCroweViewModels */,
+				884DAE862AC51E690056B52A /* CoachCroweViewKit */,
 				88B86AD52AC3DBCC006B54E4 /* Products */,
+				88413FC32AC5384800FF7090 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,21 +70,12 @@
 		88B86AD62AC3DBCC006B54E4 /* CoachCrowe */ = {
 			isa = PBXGroup;
 			children = (
-				88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */,
-				88B86AD92AC3DBCC006B54E4 /* ContentView.swift */,
-				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
 				88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */,
-				88B86ADE2AC3DBCD006B54E4 /* Preview Content */,
+				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
+				88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */,
+				88B86AD92AC3DBCC006B54E4 /* MasterView.swift */,
 			);
 			path = CoachCrowe;
-			sourceTree = "<group>";
-		};
-		88B86ADE2AC3DBCD006B54E4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				88B86ADF2AC3DBCD006B54E4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +94,11 @@
 			dependencies = (
 			);
 			name = CoachCrowe;
+			packageProductDependencies = (
+				88413FC42AC5384800FF7090 /* CoachCroweBasic */,
+				88413FC62AC5384D00FF7090 /* CoachCroweViewKit */,
+				88413FC82AC5385000FF7090 /* CoachCroweViewModels */,
+			);
 			productName = CoachCrowe;
 			productReference = 88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */;
 			productType = "com.apple.product-type.application";
@@ -127,7 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B86AE02AC3DBCD006B54E4 /* Preview Assets.xcassets in Resources */,
 				88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B86ADA2AC3DBCC006B54E4 /* ContentView.swift in Sources */,
+				88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */,
 				88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +284,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoachCrowe/CoachCrowe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoachCrowe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4A4NWTSHC9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -285,7 +298,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -311,7 +324,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoachCrowe/CoachCrowe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoachCrowe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4A4NWTSHC9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -325,7 +338,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -365,6 +378,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88413FC42AC5384800FF7090 /* CoachCroweBasic */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoachCroweBasic;
+		};
+		88413FC62AC5384D00FF7090 /* CoachCroweViewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoachCroweViewKit;
+		};
+		88413FC82AC5385000FF7090 /* CoachCroweViewModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoachCroweViewModels;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88B86ACC2AC3DBCC006B54E4 /* Project object */;
 }
