@@ -21,7 +21,7 @@ public func TextBox(text: String, index: Int, isKeyboardShowing: Bool, action: @
         let status = (isKeyboardShowing && text.count == index)
         ZStack {
             RoundedRectangle(cornerRadius: 5, style: .continuous)
-                .stroke(status ? Color("primary") : .secondary, lineWidth: status ? 1 : 0.5)
+                .stroke(status ? Color("primary") : Color(ColorSelection.gray), lineWidth: status ? 1 : 0.5)
                 .animation(.spring, value: status)
             RoundedRectangle(cornerRadius: 5, style: .continuous)
                 .opacity(0.001)

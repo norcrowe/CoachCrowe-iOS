@@ -15,8 +15,8 @@ struct NewVersionReleasedView: View {
                 .foregroundColor(Color(ColorSelection.primary))
             Text(versionID)
                 .font(.caption.bold())
-                .foregroundColor(.gray)
-            
+                .foregroundColor(Color(ColorSelection.primary))
+                
             Spacer()
         
             Button {

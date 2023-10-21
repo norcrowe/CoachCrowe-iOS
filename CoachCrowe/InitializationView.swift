@@ -14,7 +14,7 @@ struct InitializationView: View {
             if masterViewModel.initializationState != .needLogin && masterViewModel.initializationState != .failed {
                 Spacer()
                 RotatingCoachCrowe(height: logoHeight)
-                    .transition(.offset(x: -MemberSizes.screenWidth, y: 0))
+                    .transition(.offset(x: -MemberSizes.screenWidth, y: 0).combined(with: .opacity))
                     .onAppear {
                         withAnimation(.spring) {
                             logoHeight = MemberSizes.screenWidth*0.25
@@ -33,7 +33,6 @@ struct InitializationView: View {
                         }
                     }
                     masterViewModel.initialization()
-                    
                 }
             case .welcome:
                 WelcomeView(initializationState: $masterViewModel.initializationState)

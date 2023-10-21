@@ -16,12 +16,12 @@
 		88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC82AC5385000FF7090 /* CoachCroweViewModels */; };
 		8846F4482AD8174500E90160 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8846F44A2AD8174500E90160 /* Localizable.strings */; };
 		886C46D22ACA7A5300E8E0B3 /* AnimateText in Frameworks */ = {isa = PBXBuildFile; productRef = 886C46D12ACA7A5300E8E0B3 /* AnimateText */; };
-		887F08F32AC54BF4004F83B4 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887F08F22AC54BF4004F83B4 /* Keys.swift */; };
 		88830D822AC5542C003312C6 /* InitializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88830D812AC5542C003312C6 /* InitializationView.swift */; };
 		889F93E62ACC0D74003932B5 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 889F93E52ACC0D74003932B5 /* CountryPicker */; };
 		88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */; };
 		88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* MasterView.swift */; };
 		88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */; };
+		88BA67D22AE40D7000F414D4 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA67D12AE40D7000F414D4 /* Keys.swift */; };
 		88E440BB2AC54A4A0067D73B /* LeanCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 88E440BA2AC54A4A0067D73B /* LeanCloud */; };
 /* End PBXBuildFile section */
 
@@ -33,13 +33,13 @@
 		884DAE842AC51E190056B52A /* CoachCroweBasic */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoachCroweBasic; sourceTree = SOURCE_ROOT; };
 		884DAE852AC51E460056B52A /* CoachCroweViewModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewModels; sourceTree = "<group>"; };
 		884DAE862AC51E690056B52A /* CoachCroweViewKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewKit; sourceTree = "<group>"; };
-		887F08F22AC54BF4004F83B4 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		88830D812AC5542C003312C6 /* InitializationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationView.swift; sourceTree = "<group>"; };
 		88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachCrowe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCroweApp.swift; sourceTree = "<group>"; };
 		88B86AD92AC3DBCC006B54E4 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoachCrowe.entitlements; sourceTree = "<group>"; };
+		88BA67D12AE40D7000F414D4 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				88830D812AC5542C003312C6 /* InitializationView.swift */,
 				882838402AC6BC5400F1CFC3 /* LoginView.swift */,
 				8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */,
-				887F08F22AC54BF4004F83B4 /* Keys.swift */,
+				88BA67D12AE40D7000F414D4 /* Keys.swift */,
 			);
 			path = CoachCrowe;
 			sourceTree = "<group>";
@@ -200,8 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */,
+				88BA67D22AE40D7000F414D4 /* Keys.swift in Sources */,
 				88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */,
-				887F08F32AC54BF4004F83B4 /* Keys.swift in Sources */,
 				8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */,
 				88830D822AC5542C003312C6 /* InitializationView.swift in Sources */,
 				88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */,

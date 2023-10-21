@@ -18,6 +18,7 @@ public class MasterViewModel: ObservableObject {
     }
     
     public func initialization() {
+        print("111")
         DispatchQueue.global().async {
             /// 检查是否有必须升级的版本
             let versionQuery = LCQuery(className: LCVersionClass.className)
@@ -25,7 +26,7 @@ public class MasterViewModel: ObservableObject {
             versionQuery.find { result in
                 switch result {
                 case .success(let versions):
-                    /// 发现必须升级的版本
+                    /// 检查时否有必须升级的版本发布
                     if versions.count == 1 {
                         guard let versionID = versions[0].get(LCVersionClass.versionID)?.stringValue, let downloadAddressString = versions[0].get(LCVersionClass.downloadAddress)?.stringValue, let downloadURL = URL(string: downloadAddressString) else {
                             DispatchQueue.main.async {
@@ -35,6 +36,7 @@ public class MasterViewModel: ObservableObject {
                             }
                             return
                         }
+                        
                         DispatchQueue.main.async {
                             withAnimation(.spring) {
                                 self.initializationState = .newVersionReleased(versionID: versionID, downloadURL: downloadURL)
@@ -51,6 +53,8 @@ public class MasterViewModel: ObservableObject {
                             return
                         }
                         
+                        /// 开始加载主页信息
+                        
                     }
                 case .failure:
                     DispatchQueue.main.async {
@@ -61,7 +65,6 @@ public class MasterViewModel: ObservableObject {
                 }
             }
         }
-
     }
 }
 
@@ -72,7 +75,7 @@ public class LoginViewModel: ObservableObject {
     @Published public var showCropView: Bool = false
     @Published public var image: UIImage? = nil
     @Published public var region: Region = .china
-    @Published public var phoneNumber: String = ""
+    @Published public var phoneNumber: String = "18712618775"
     @Published public var name: String = ""
     @Published public var verificationCode: String = ""
     @Published public var hudState: HudState? = nil

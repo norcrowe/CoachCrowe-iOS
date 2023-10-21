@@ -106,9 +106,9 @@ public enum ColorSelection: String {
     case backgroundColor
     case primary
     case secondary
+    case gray
     
     public var color: Color { Color(self.rawValue) }
-    
 }
 
 /// 自定义的Result
@@ -127,3 +127,22 @@ public enum HudState: Equatable {
         case failed
     }
  }
+
+/// 震动选项
+public enum Vibration {
+    case soft
+    case medium
+    case success
+    case error
+    
+    public func vibrate() {
+        switch self {
+        case .soft, .medium:
+            let generator = UIImpactFeedbackGenerator(style: self == .soft ? .soft : .medium)
+            generator.prepare()
+            generator.impactOccurred()
+        case .success, .error:
+            UINotificationFeedbackGenerator().notificationOccurred(self == .success ? .success : .error)
+        }
+    }
+}

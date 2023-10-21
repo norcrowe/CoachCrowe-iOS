@@ -47,7 +47,7 @@ public struct RotatingCoachCrowe: View {
         var z: CGFloat
         var shadowColor: RGBAModel
         
-        init(degrees: CGFloat = CGFloat.random(in: -10...10), x: CGFloat = CGFloat.random(in: 0...1), y: CGFloat = CGFloat.random(in: 0...1), z: CGFloat = CGFloat.random(in: 0...1), shadowColor: RGBAModel = RGBAModel(red: Double.random(in: 0...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1), alpha: 1)) {
+        init(degrees: CGFloat = CGFloat.random(in: -10...10), x: CGFloat = CGFloat.random(in: 0...1), y: CGFloat = CGFloat.random(in: 0...1), z: CGFloat = CGFloat.random(in: 0...1), shadowColor: RGBAModel = RGBAModel(red: Double.random(in: 0...255), green: Double.random(in: 0...255), blue: Double.random(in: 0...255), alpha: 255)) {
             self.degrees = degrees
             self.x = x
             self.y = y
@@ -139,7 +139,7 @@ public struct ErrorView: View {
                 .foregroundColor(.red)
             Text(text)
                 .font(.title3.bold())
-                .foregroundColor(.gray)
+                .foregroundColor(Color(ColorSelection.gray))
             Spacer()
             RoundedFillColorNextStepButton(text: "Try again") {
                 action()
@@ -150,7 +150,7 @@ public struct ErrorView: View {
     }
 }
 
-/// 选择国家Picker
+/// RegionPicker
 public struct RegionPicker: View {
     @Binding var region: Region
     @Binding var show: Bool
@@ -221,7 +221,7 @@ struct HudView: View {
         }
     }
     private var fullWidth: CGFloat {
-        return messageWidth + 90
+        return messageWidth + 70
     }
     
     init(hudState: Binding<HudState?>) {
@@ -235,34 +235,25 @@ struct HudView: View {
             case .progress:
                 Zelda()
             case .completed(let completedState, let message):
-                Group {
+                ZStack {
                     Image(systemName: completedState == HudState.CompletedState.successed ? "checkmark" : "exclamationmark.circle")
                         .font(.title3.bold())
-                        .foregroundColor(.gray)
                         .hAlign(.leading)
                         .padding(.leading, 15)
-                    
                     Text(key: message)
-                        .foregroundColor(.gray)
                         .font(.body.bold())
                         .frame(width: messageWidth)
                 }
+                .foregroundColor(Color(ColorSelection.gray))
                 .frame(width: fullWidth, height: 50)
                 .roundedColorBackground(color: .white, radius: 999)
-                .offset(x: 0, y: hudState == nil ? -300 : 0)
+                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
                 .vAlign(.top)
-                .onChange(of: hudState) { newValue in
-                    switch newValue {
-                    case .progress:
-                        return
-                    case .completed:
-                        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                            withAnimation(.spring){
-                                hudState = nil
-                            }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                        withAnimation(.spring){
+                            hudState = nil
                         }
-                    case nil:
-                        return
                     }
                 }
             case .none:

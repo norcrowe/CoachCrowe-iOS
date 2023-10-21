@@ -26,7 +26,7 @@ public struct LoginTextField<Content: View>: View {
             content()
         }
         .padding(7.5)
-        .roundedColorBackground(color: Color(.secondary), radius: 15)
+        .roundedColorBackground(color: Color(ColorSelection.gray), radius: 15)
     }
 }
 

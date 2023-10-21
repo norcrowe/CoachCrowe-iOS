@@ -71,7 +71,6 @@ struct InputPhoneNumberView: View {
             }
             .customDisabled(loginViewModel.phoneNumber.count<5)
         }
-        
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
