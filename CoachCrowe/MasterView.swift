@@ -1,17 +1,18 @@
-//
-//  MasterView.swift
-//  CoachCrowe
-//
-//  Created by Nor CrowE on 2023/9/27.
-//
-
 import SwiftUI
+import CoachCroweBasic
+import CoachCroweViewModels
+import CoachCroweViewKit
 
 struct MasterView: View {
+    @StateObject var masterViewModel: MasterViewModel = MasterViewModel()
     
-    
-    /// View
+    /// body
     var body: some View {
-        Text("Hello, world!")
+        if let initializationState = masterViewModel.initializationState {
+            InitializationView(masterViewModel: masterViewModel)
+                .transition(.offset(x: -MemberSizes.screenWidth).combined(with: .opacity))
+        } else {
+            
+        }
     }
 }

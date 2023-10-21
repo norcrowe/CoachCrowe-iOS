@@ -1,7 +1,37 @@
-/* 
-  Localizable.strings
-  CoachCrowe
+/// 欢迎
+"Welcome Here" = "欢迎加入我们";
+"Probably the best tactical board App👀" = "可能是最好的战术板软件👀";
+"Start" = "开始";
 
-  Created by Nor CrowE on 2023/10/12.
-  
-*/
+/// 登录/注册
+"Your Phone Number" = "你的手机号";
+"Enter phone number to begin verification" = "输入手机号从而开始验证";
+"Phone Number" = "手机号";
+"Send code" = "发送验证码";
+"Enter Verification Code" = "输入验证码";
+"The verification code has been sent to the phone number ending in %1$@" = "已发送验证码到尾号为%1$@的手机号";
+"Sign Up" = "注册";
+"Enter your picture and name" = "选择你的头像和呢称";
+"Code" = "验证码";
+"Pick Region Number" = "选择地区号码";
+
+/// Messages
+"Loading" = "正在加载";
+"Load failed" = "加载失败";
+"Initialization failed" = "初始化失败";
+"Verify your phone number" = "确认你的手机号";
+"Return to number input" = "返回输入号码界面";
+"Sure to do?" = "确认这样做?";
+"Send failed" = "发送失败";
+"Verification failed" = "验证失败";
+"Signup failed" = "注册失败";
+"Signup Successed" = "注册成功";
+
+/// 其它
+"Name" = "名字";
+"Confirm" = "确定";
+"New Version Released" = "新版本已发布";
+"Update" = "更新";
+"Cancel" = "取消";
+"Sent" = "发送";
+

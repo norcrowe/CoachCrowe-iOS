@@ -5,16 +5,27 @@ import PackageDescription
 
 let package = Package(
     name: "CoachCroweViewKit",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "CoachCroweViewKit",
             targets: ["CoachCroweViewKit"]),
     ],
+    dependencies: [
+        .package(path: "../CoachCroweBasic"),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI", .upToNextMajor(from: "2.2.3"))
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CoachCroweViewKit")
+            name: "CoachCroweViewKit",
+            dependencies: [
+                .product(name: "CoachCroweBasic", package: "CoachCroweBasic"),
+                .product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI")
+            ],
+            path: "Sources"
+        )
     ]
 )

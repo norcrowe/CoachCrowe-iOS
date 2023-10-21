@@ -1,18 +1,35 @@
-//
-//  NewVersionReleasedView.swift
-//  CoachCrowe
-//
-//  Created by Nor CrowE on 2023/10/7.
-//
-
 import SwiftUI
+import CoachCroweBasic
+import CoachCroweViewKit
+import CoachCroweViewModels
 
 struct NewVersionReleasedView: View {
+    let versionID: String
+    let downloadURL: URL
+    
+    /// body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack(spacing: 5) {
+            Text(key: "New Version Released")
+                .font(.title.bold())
+                .foregroundColor(Color(ColorSelection.primary))
+            Text(versionID)
+                .font(.caption.bold())
+                .foregroundColor(.gray)
+            
+            Spacer()
+        
+            Button {
+                UIApplication.shared.open(downloadURL)
+            } label: {
+                Text(key: "Update")
+                    .foregroundStyle(.white)
+                    .font(.body.bold())
+                    .padding(.vertical, 15)
+                    .frame(width: MemberSizes.componentWidth)
+                    .roundedColorBackground(color: .blue, radius: 15)
+            }
 
-#Preview {
-    NewVersionReleasedView()
+        }
+    }
 }

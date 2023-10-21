@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */; };
+		8822DBD22ADD332C00FE257F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8822DBD42ADD332C00FE257F /* InfoPlist.strings */; };
+		882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882838402AC6BC5400F1CFC3 /* LoginView.swift */; };
+		882838472AC6C74300F1CFC3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */; };
 		88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC42AC5384800FF7090 /* CoachCroweBasic */; };
 		88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC62AC5384D00FF7090 /* CoachCroweViewKit */; };
 		88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC82AC5385000FF7090 /* CoachCroweViewModels */; };
+		8846F4482AD8174500E90160 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8846F44A2AD8174500E90160 /* Localizable.strings */; };
+		886C46D22ACA7A5300E8E0B3 /* AnimateText in Frameworks */ = {isa = PBXBuildFile; productRef = 886C46D12ACA7A5300E8E0B3 /* AnimateText */; };
+		887F08F32AC54BF4004F83B4 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887F08F22AC54BF4004F83B4 /* Keys.swift */; };
+		88830D822AC5542C003312C6 /* InitializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88830D812AC5542C003312C6 /* InitializationView.swift */; };
+		889F93E62ACC0D74003932B5 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 889F93E52ACC0D74003932B5 /* CountryPicker */; };
 		88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */; };
 		88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* MasterView.swift */; };
 		88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */; };
+		88E440BB2AC54A4A0067D73B /* LeanCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 88E440BA2AC54A4A0067D73B /* LeanCloud */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionReleasedView.swift; sourceTree = "<group>"; };
+		8822DBD32ADD332C00FE257F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		882838402AC6BC5400F1CFC3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8846F4492AD8174500E90160 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		884DAE842AC51E190056B52A /* CoachCroweBasic */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoachCroweBasic; sourceTree = SOURCE_ROOT; };
 		884DAE852AC51E460056B52A /* CoachCroweViewModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewModels; sourceTree = "<group>"; };
 		884DAE862AC51E690056B52A /* CoachCroweViewKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewKit; sourceTree = "<group>"; };
+		887F08F22AC54BF4004F83B4 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		88830D812AC5542C003312C6 /* InitializationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationView.swift; sourceTree = "<group>"; };
 		88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachCrowe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachCroweApp.swift; sourceTree = "<group>"; };
 		88B86AD92AC3DBCC006B54E4 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
@@ -31,9 +47,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882838472AC6C74300F1CFC3 /* SDWebImageSwiftUI in Frameworks */,
+				88E440BB2AC54A4A0067D73B /* LeanCloud in Frameworks */,
 				88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */,
 				88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */,
 				88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */,
+				889F93E62ACC0D74003932B5 /* CountryPicker in Frameworks */,
+				886C46D22ACA7A5300E8E0B3 /* AnimateText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +65,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		889F93DF2ACBF7C9003932B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
+				8846F44A2AD8174500E90160 /* Localizable.strings */,
+				8822DBD42ADD332C00FE257F /* InfoPlist.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		88B86ACB2AC3DBCC006B54E4 = {
@@ -70,10 +100,14 @@
 		88B86AD62AC3DBCC006B54E4 /* CoachCrowe */ = {
 			isa = PBXGroup;
 			children = (
+				889F93DF2ACBF7C9003932B5 /* Resources */,
 				88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */,
-				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
 				88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */,
 				88B86AD92AC3DBCC006B54E4 /* MasterView.swift */,
+				88830D812AC5542C003312C6 /* InitializationView.swift */,
+				882838402AC6BC5400F1CFC3 /* LoginView.swift */,
+				8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */,
+				887F08F22AC54BF4004F83B4 /* Keys.swift */,
 			);
 			path = CoachCrowe;
 			sourceTree = "<group>";
@@ -98,6 +132,10 @@
 				88413FC42AC5384800FF7090 /* CoachCroweBasic */,
 				88413FC62AC5384D00FF7090 /* CoachCroweViewKit */,
 				88413FC82AC5385000FF7090 /* CoachCroweViewModels */,
+				88E440BA2AC54A4A0067D73B /* LeanCloud */,
+				882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */,
+				886C46D12ACA7A5300E8E0B3 /* AnimateText */,
+				889F93E52ACC0D74003932B5 /* CountryPicker */,
 			);
 			productName = CoachCrowe;
 			productReference = 88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */;
@@ -125,8 +163,15 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 88B86ACB2AC3DBCC006B54E4;
+			packageReferences = (
+				88E440B92AC54A4A0067D73B /* XCRemoteSwiftPackageReference "swift-sdk" */,
+				882838452AC6C74200F1CFC3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				886C46D02ACA7A5300E8E0B3 /* XCRemoteSwiftPackageReference "AnimateText" */,
+				889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+			);
 			productRefGroup = 88B86AD52AC3DBCC006B54E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */,
+				8822DBD22ADD332C00FE257F /* InfoPlist.strings in Resources */,
+				8846F4482AD8174500E90160 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,12 +199,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */,
 				88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */,
+				887F08F32AC54BF4004F83B4 /* Keys.swift in Sources */,
+				8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */,
+				88830D822AC5542C003312C6 /* InitializationView.swift in Sources */,
 				88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8822DBD42ADD332C00FE257F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8822DBD32ADD332C00FE257F /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8846F44A2AD8174500E90160 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8846F4492AD8174500E90160 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		88B86AE12AC3DBCD006B54E4 /* Debug */ = {
@@ -289,6 +359,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coach Crowe";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -298,7 +370,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -329,6 +401,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coach Crowe";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -338,7 +412,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -379,7 +453,47 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		882838452AC6C74200F1CFC3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+		886C46D02ACA7A5300E8E0B3 /* XCRemoteSwiftPackageReference "AnimateText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jasudev/AnimateText";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+		889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+		88E440B92AC54A4A0067D73B /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/leancloud/swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 17.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882838452AC6C74200F1CFC3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		88413FC42AC5384800FF7090 /* CoachCroweBasic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoachCroweBasic;
@@ -391,6 +505,21 @@
 		88413FC82AC5385000FF7090 /* CoachCroweViewModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoachCroweViewModels;
+		};
+		886C46D12ACA7A5300E8E0B3 /* AnimateText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886C46D02ACA7A5300E8E0B3 /* XCRemoteSwiftPackageReference "AnimateText" */;
+			productName = AnimateText;
+		};
+		889F93E52ACC0D74003932B5 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
+		};
+		88E440BA2AC54A4A0067D73B /* LeanCloud */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88E440B92AC54A4A0067D73B /* XCRemoteSwiftPackageReference "swift-sdk" */;
+			productName = LeanCloud;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

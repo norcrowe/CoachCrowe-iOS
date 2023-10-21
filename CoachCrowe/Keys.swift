@@ -1,8 +1,7 @@
-//
-//  Keys.swift
-//  CoachCrowe
-//
-//  Created by Nor CrowE on 2023/9/28.
-//
-
 import Foundation
+
+public class Keys {
+    static public let lcAppID = ""
+    static public let lcAppKey = ""
+    static public let lcServerURL = ""
+}
