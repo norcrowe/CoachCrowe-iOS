@@ -8,25 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */; };
+		88130E5E2AE8FF1E00807F9D /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88130E5D2AE8FF1E00807F9D /* LibraryView.swift */; };
 		8822DBD22ADD332C00FE257F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8822DBD42ADD332C00FE257F /* InfoPlist.strings */; };
 		882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882838402AC6BC5400F1CFC3 /* LoginView.swift */; };
 		882838472AC6C74300F1CFC3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */; };
-		88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC42AC5384800FF7090 /* CoachCroweBasic */; };
-		88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC62AC5384D00FF7090 /* CoachCroweViewKit */; };
-		88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */ = {isa = PBXBuildFile; productRef = 88413FC82AC5385000FF7090 /* CoachCroweViewModels */; };
 		8846F4482AD8174500E90160 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8846F44A2AD8174500E90160 /* Localizable.strings */; };
+		8862A3962AF096410021A7E7 /* CoachCroweBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 8862A3952AF096410021A7E7 /* CoachCroweBasic */; };
+		8862A3982AF096440021A7E7 /* CoachCroweViewModels in Frameworks */ = {isa = PBXBuildFile; productRef = 8862A3972AF096440021A7E7 /* CoachCroweViewModels */; };
+		8862A39A2AF096480021A7E7 /* CoachCroweViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8862A3992AF096480021A7E7 /* CoachCroweViewKit */; };
 		886C46D22ACA7A5300E8E0B3 /* AnimateText in Frameworks */ = {isa = PBXBuildFile; productRef = 886C46D12ACA7A5300E8E0B3 /* AnimateText */; };
 		88830D822AC5542C003312C6 /* InitializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88830D812AC5542C003312C6 /* InitializationView.swift */; };
-		889F93E62ACC0D74003932B5 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 889F93E52ACC0D74003932B5 /* CountryPicker */; };
 		88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */; };
 		88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86AD92AC3DBCC006B54E4 /* MasterView.swift */; };
 		88B86ADC2AC3DBCD006B54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */; };
 		88BA67D22AE40D7000F414D4 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA67D12AE40D7000F414D4 /* Keys.swift */; };
+		88BA67D62AE4168D00F414D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA67D52AE4168D00F414D4 /* Tests.swift */; };
 		88E440BB2AC54A4A0067D73B /* LeanCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 88E440BA2AC54A4A0067D73B /* LeanCloud */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionReleasedView.swift; sourceTree = "<group>"; };
+		88130E5D2AE8FF1E00807F9D /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		8822DBD32ADD332C00FE257F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		882838402AC6BC5400F1CFC3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8846F4492AD8174500E90160 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoachCrowe.entitlements; sourceTree = "<group>"; };
 		88BA67D12AE40D7000F414D4 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		88BA67D52AE4168D00F414D4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,13 +50,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8862A39A2AF096480021A7E7 /* CoachCroweViewKit in Frameworks */,
+				8862A3982AF096440021A7E7 /* CoachCroweViewModels in Frameworks */,
 				882838472AC6C74300F1CFC3 /* SDWebImageSwiftUI in Frameworks */,
 				88E440BB2AC54A4A0067D73B /* LeanCloud in Frameworks */,
-				88413FC92AC5385000FF7090 /* CoachCroweViewModels in Frameworks */,
-				88413FC72AC5384D00FF7090 /* CoachCroweViewKit in Frameworks */,
-				88413FC52AC5384800FF7090 /* CoachCroweBasic in Frameworks */,
-				889F93E62ACC0D74003932B5 /* CountryPicker in Frameworks */,
 				886C46D22ACA7A5300E8E0B3 /* AnimateText in Frameworks */,
+				8862A3962AF096410021A7E7 /* CoachCroweBasic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +75,7 @@
 				88B86ADB2AC3DBCD006B54E4 /* Assets.xcassets */,
 				8846F44A2AD8174500E90160 /* Localizable.strings */,
 				8822DBD42ADD332C00FE257F /* InfoPlist.strings */,
+				88BA67D12AE40D7000F414D4 /* Keys.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -104,12 +107,37 @@
 				88B86ADD2AC3DBCD006B54E4 /* CoachCrowe.entitlements */,
 				88B86AD72AC3DBCC006B54E4 /* CoachCroweApp.swift */,
 				88B86AD92AC3DBCC006B54E4 /* MasterView.swift */,
+				88DEE4352AE510860085E2F0 /* Initialization */,
+				88DEE4342AE510580085E2F0 /* Library */,
+				88BA67D42AE4167B00F414D4 /* Tests */,
+			);
+			path = CoachCrowe;
+			sourceTree = "<group>";
+		};
+		88BA67D42AE4167B00F414D4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				88BA67D52AE4168D00F414D4 /* Tests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		88DEE4342AE510580085E2F0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				88130E5D2AE8FF1E00807F9D /* LibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		88DEE4352AE510860085E2F0 /* Initialization */ = {
+			isa = PBXGroup;
+			children = (
 				88830D812AC5542C003312C6 /* InitializationView.swift */,
 				882838402AC6BC5400F1CFC3 /* LoginView.swift */,
 				8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */,
-				88BA67D12AE40D7000F414D4 /* Keys.swift */,
 			);
-			path = CoachCrowe;
+			path = Initialization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,13 +157,12 @@
 			);
 			name = CoachCrowe;
 			packageProductDependencies = (
-				88413FC42AC5384800FF7090 /* CoachCroweBasic */,
-				88413FC62AC5384D00FF7090 /* CoachCroweViewKit */,
-				88413FC82AC5385000FF7090 /* CoachCroweViewModels */,
 				88E440BA2AC54A4A0067D73B /* LeanCloud */,
 				882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */,
 				886C46D12ACA7A5300E8E0B3 /* AnimateText */,
-				889F93E52ACC0D74003932B5 /* CountryPicker */,
+				8862A3952AF096410021A7E7 /* CoachCroweBasic */,
+				8862A3972AF096440021A7E7 /* CoachCroweViewModels */,
+				8862A3992AF096480021A7E7 /* CoachCroweViewKit */,
 			);
 			productName = CoachCrowe;
 			productReference = 88B86AD42AC3DBCC006B54E4 /* CoachCrowe.app */;
@@ -170,7 +197,6 @@
 				88E440B92AC54A4A0067D73B /* XCRemoteSwiftPackageReference "swift-sdk" */,
 				882838452AC6C74200F1CFC3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				886C46D02ACA7A5300E8E0B3 /* XCRemoteSwiftPackageReference "AnimateText" */,
-				889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */,
 			);
 			productRefGroup = 88B86AD52AC3DBCC006B54E4 /* Products */;
 			projectDirPath = "";
@@ -199,9 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BA67D62AE4168D00F414D4 /* Tests.swift in Sources */,
 				882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */,
 				88BA67D22AE40D7000F414D4 /* Keys.swift in Sources */,
 				88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */,
+				88130E5E2AE8FF1E00807F9D /* LibraryView.swift in Sources */,
 				8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */,
 				88830D822AC5542C003312C6 /* InitializationView.swift in Sources */,
 				88B86AD82AC3DBCC006B54E4 /* CoachCroweApp.swift in Sources */,
@@ -470,14 +498,6 @@
 				minimumVersion = 0.5.0;
 			};
 		};
-		889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/CountryPicker";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
 		88E440B92AC54A4A0067D73B /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/leancloud/swift-sdk";
@@ -494,27 +514,22 @@
 			package = 882838452AC6C74200F1CFC3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
-		88413FC42AC5384800FF7090 /* CoachCroweBasic */ = {
+		8862A3952AF096410021A7E7 /* CoachCroweBasic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoachCroweBasic;
 		};
-		88413FC62AC5384D00FF7090 /* CoachCroweViewKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CoachCroweViewKit;
-		};
-		88413FC82AC5385000FF7090 /* CoachCroweViewModels */ = {
+		8862A3972AF096440021A7E7 /* CoachCroweViewModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoachCroweViewModels;
+		};
+		8862A3992AF096480021A7E7 /* CoachCroweViewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoachCroweViewKit;
 		};
 		886C46D12ACA7A5300E8E0B3 /* AnimateText */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 886C46D02ACA7A5300E8E0B3 /* XCRemoteSwiftPackageReference "AnimateText" */;
 			productName = AnimateText;
-		};
-		889F93E52ACC0D74003932B5 /* CountryPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 889F93E42ACC0D74003932B5 /* XCRemoteSwiftPackageReference "CountryPicker" */;
-			productName = CountryPicker;
 		};
 		88E440BA2AC54A4A0067D73B /* LeanCloud */ = {
 			isa = XCSwiftPackageProductDependency;

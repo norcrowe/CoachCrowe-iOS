@@ -74,7 +74,7 @@ public extension View {
     func caption() -> some View {
         self
             .font(.caption)
-            .foregroundColor(.secondary)
+            .colored(.gray)
     }
 
     /// 自定义Disabled
@@ -83,8 +83,27 @@ public extension View {
             .disabled(disabled)
             .opacity(changeOpacity&&disabled ? 0.5 : 1)
     }
+    
+    /// 主视图Head Bar
+    func mainViewHeadBar<Content: View>(title: String, showSideBar: Binding<Bool>, content: @escaping () -> Content) -> some View {
+        ZStack(alignment: .top) {
+            self
+            MainViewHeadBar(title: title, showSideBar: showSideBar, content: content)
+                .ignoresSafeArea()
+        }
+    }
+    
+    /// 颜色
+    func colored(_ selection: ColorSelection) -> some View {
+        self
+            .foregroundColor(Color(selection))
+    }
+    
+    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
+    }
+    
 }
-
 
 public extension Text {
     /// 本地化

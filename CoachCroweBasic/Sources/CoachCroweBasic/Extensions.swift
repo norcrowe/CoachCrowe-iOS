@@ -75,3 +75,12 @@ public extension View {
         }
     }
 }
+
+public extension CGPoint {
+    /// 通过`起点` `终点` 和 `预期的控制点` 返回一个`准确的控制点`
+    static func calculateExactControlPoint(startingPoint: CGPoint, endPoint: CGPoint, expectedControlPoint: CGPoint) -> CGPoint {
+        let x = 2 * expectedControlPoint.x - startingPoint.x/2 - endPoint.x/2
+        let y = 2 * expectedControlPoint.y - startingPoint.y/2 - endPoint.y/2
+        return CGPoint(x: x, y: y)
+    }
+}

@@ -12,10 +12,10 @@ struct NewVersionReleasedView: View {
         VStack(spacing: 5) {
             Text(key: "New Version Released")
                 .font(.title.bold())
-                .foregroundColor(Color(ColorSelection.primary))
+                .colored(.primaryColor)
             Text(versionID)
                 .font(.caption.bold())
-                .foregroundColor(Color(ColorSelection.primary))
+                .colored(.primaryColor)
                 
             Spacer()
         

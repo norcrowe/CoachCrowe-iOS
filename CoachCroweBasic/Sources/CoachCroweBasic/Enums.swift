@@ -1,38 +1,31 @@
 import Foundation
 import SwiftUI
 
-/// 主视图状态
-public enum MasterViewState: String, Identifiable, CaseIterable {
+/// 主视图选项
+public enum MainViewState: CaseIterable, Equatable {
     case library
-    case shared
     case community
-    case settings
+    case personal
     
-    public var id: String { self.rawValue }
-     
     public var description: String {
         switch self {
         case .library:
             return "Library"
-        case .shared:
-            return "Shared"
         case .community:
             return "Community"
-        case .settings:
-            return "Settings"
+        case .personal:
+            return "Personal"
         }
     }
     
-    public var sfSymbolName: String {
+    public var sFSymbolName: String {
         switch self {
         case .library:
             return "house"
-        case .shared:
-            return "bolt.horizontal"
         case .community:
             return "shippingbox"
-        case .settings:
-            return "gear.circle"
+        case .personal:
+            return "person"
         }
     }
 }
@@ -104,9 +97,10 @@ public enum Region {
 /// 颜色选项
 public enum ColorSelection: String {
     case backgroundColor
-    case primary
+    case primaryColor
     case secondary
     case gray
+    case blue
     
     public var color: Color { Color(self.rawValue) }
 }
@@ -143,6 +137,39 @@ public enum Vibration {
             generator.impactOccurred()
         case .success, .error:
             UINotificationFeedbackGenerator().notificationOccurred(self == .success ? .success : .error)
+        }
+    }
+}
+
+/// 球的偏移
+public enum BallOffsetMode: String, Codable {
+    case left
+    case right
+    case up
+    case down
+}
+
+/// 球场类型
+public enum FieldType: String, Codable {
+    case half
+    case full
+}
+
+/// 通用尺寸
+public enum UniversalSize: String, Codable {
+    case small = "1x"
+    case medium = "2x"
+    case large = "3x"
+    
+    /// 线条宽度
+    public var lineWidth: CGFloat {
+        switch self {
+        case .small:
+            return 1.5
+        case .medium:
+            return 2.5
+        case .large:
+            return 4
         }
     }
 }

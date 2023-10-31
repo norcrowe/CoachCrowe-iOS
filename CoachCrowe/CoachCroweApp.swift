@@ -1,9 +1,12 @@
-//  CoachCrowe
+/// CoachCrowe
 /// Created by nor
-/// This one for `CR7` ❤
+/// This one for `CR7`
 
 import SwiftUI
 import LeanCloud
+import CoachCroweBasic
+import CoachCroweViewModels
+import CoachCroweViewKit
 
 @main
 struct CoachCroweApp: App {

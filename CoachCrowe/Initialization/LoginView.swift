@@ -6,7 +6,7 @@ import CoachCroweViewKit
 struct LoginView: View {
     @ObservedObject var masterViewModel: MasterViewModel
     @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
-    @State private var edge: Edge = .leading
+
     /// body
     var body: some View {
         Group {
@@ -52,8 +52,8 @@ struct InputPhoneNumberView: View {
                     showRegionPickerSheet = true
                 } label: {
                     Text(loginViewModel.region.flag + loginViewModel.region.number)
-                        .foregroundColor(Color(ColorSelection.primary))
-                        .bold()
+                        .colored(.primaryColor)
+                        .font(.body.bold())
                         .padding(10)
                         .roundedColorBackground(color: Color(ColorSelection.secondary), radius: 10)
                 }
@@ -206,7 +206,7 @@ struct SignupView: View {
                     } else {
                         Image(systemName: "photo.fill")
                             .font(.title.bold())
-                            .foregroundColor(Color(ColorSelection.primary))
+                            .colored(.primaryColor)
                     }
                     
                 }

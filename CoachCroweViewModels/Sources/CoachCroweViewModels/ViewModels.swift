@@ -6,19 +6,16 @@ import SwiftUI
 
 /// 主视图 View Model
 public class MasterViewModel: ObservableObject {
-    @Published public var viewState: MasterViewState = .library
-    @Published public var selectedSelection: [MasterViewState] = [.library]
-    @Published public var initializationState: InitializationState? = .initializing
+    @Published public var mainViewState: MainViewState = .library
+    @Published public var initializationState: InitializationState? = nil
+    @Published public var showSideBar: Bool = false
     
     public init() {
         DispatchQueue.global().asyncAfter(deadline: .now()+1) {
-            LCUser.logOut()
-            self.initialization()
         }
     }
     
     public func initialization() {
-        print("111")
         DispatchQueue.global().async {
             /// 检查是否有必须升级的版本
             let versionQuery = LCQuery(className: LCVersionClass.className)
@@ -201,3 +198,239 @@ public class LoginViewModel: ObservableObject {
     }
 
 }
+
+/// 篮球场View Model
+public class BasketballFieldViewModel: ObservableObject {
+    @Published public var fieldData: FieldModels.BasketballFieldModel
+    @Published public var fullWidth: CGFloat
+    
+    /// 模版数据
+    public var templateData: FieldModels.BasketballFieldTemplateModel {
+        return fieldData.template
+    }
+    
+    /// 颜色数据
+    public var colorsData: FieldModels.BasketballFieldColorsModel {
+        return fieldData.colors
+    }
+    
+    /// 主要线条大小
+    public var mainLinesWidth: CGFloat {
+        return templateData.mainLinesSize.lineWidth
+    }
+    
+    /// 球场视图总高
+    public var fullHeight: CGFloat {
+        return fullWidth*templateData.aspectRatio
+    }
+    
+    /// 球场内部大小
+    public var fieldInteriorSize: CGSize {
+        return CGSize(width: templateData.fieldInteriorRatio * fullWidth, height: templateData.fieldInteriorRatio * fullHeight)
+    }
+        
+    /// 四分之一球场的宽度
+    public var quarterFieldWidth: CGFloat {
+        return fullWidth/2
+    }
+    
+    /// 四分之一球场的高度
+    public var quarterFieldHeight: CGFloat {
+        switch templateData.type {
+        case .half:
+            return fullHeight
+        case .full:
+            return fullHeight/2
+        }
+    }
+    
+    /// 三分线起点X
+    public var threePointLineStartingX: Double {
+        return templateData.threePointLineStartingXRatio * quarterFieldWidth
+    }
+    
+    /// 三分线顶点Y
+    public var threePointLineVerticalY: Double {
+        return templateData.threePointLineVerticalYRation * quarterFieldHeight
+    }
+    
+    /// 三分线底角直线终点Y
+    public var threePointLineBottomCornerY: Double {
+        return templateData.threePointLineBottomCornerYRatio * quarterFieldHeight
+    }
+
+    /// 三分线曲线控制点X
+    public var threePointLineCurveControlX: Double {
+        return templateData.threePointLineCurveControlXRatio * quarterFieldWidth
+    }
+    
+    /// 掷球点Y
+    public var passingLineY: Double {
+        return templateData.passingLineYRatio * quarterFieldHeight
+    }
+    
+    /// 内线起点X
+    public var interiorLineStartingX: Double {
+        return templateData.interiorLineStartingXRation * quarterFieldWidth
+    }
+    
+    /// 内线顶点Y
+    public var interiorLineVerticalY: Double {
+        return templateData.interiorLineVerticalYRatio * quarterFieldHeight
+    }
+    
+    /// 篮板点X
+    public var reboundX: Double {
+        return templateData.reboundXRation * quarterFieldWidth
+    }
+    
+    /// 篮板点Y
+    public var reboundY: Double {
+        return templateData.reboundYRation * quarterFieldHeight
+    }
+    
+    /// 三秒区起点X
+    public var threeSecondZoneLineStartingX: Double {
+        return templateData.threeSecondZoneLineStartingXRation * quarterFieldWidth
+    }
+    
+    /// 三秒区顶点Y
+    public var threeSecondZoneLineVerticalY: Double {
+        return templateData.threeSecondZoneLineVerticalYRation * quarterFieldHeight
+    }
+    
+    /// 罚球圈半径
+    public var freeThrowCircleRadius: Double {
+        /// 占0.7的内线宽
+        return 0.7*((1-templateData.interiorLineStartingXRation)*quarterFieldWidth)
+    }
+    
+    /// 篮筐半径
+    public var basketRadius: Double {
+        return 0.35*(quarterFieldWidth - reboundX)
+    }
+
+    public init(fieldData: FieldModels.BasketballFieldModel, fullWidth: CGFloat) {
+        self.fieldData = fieldData
+        self.fullWidth = fullWidth
+    }
+}
+
+/// 足球场View Model
+public class FootballFieldViewModel: ObservableObject {
+    @Published public var fieldData: FieldModels.FootballFieldModel
+    @Published public var fullWidth: CGFloat
+    
+    /// 模版数据
+    public var templateData: FieldModels.FootballFieldTemplateModel {
+        return fieldData.template
+    }
+    
+    /// 颜色数据
+    public var colorsData: FieldModels.FootballFieldColorsModel {
+        return fieldData.colors
+    }
+    
+    /// 球场视图总高
+    public var fullHeight: CGFloat {
+        return fullWidth*templateData.aspectRatio
+    }
+    
+    /// 草地颜色
+    public var turfColor: Color {
+        return Color(colorsData.turfColor)
+    }
+    
+    /// 草地二级颜色
+    public var turfSecondaryColor: Color {
+        let colorData = RGBAModel(red: colorsData.turfColor.red*0.8, green: colorsData.turfColor.green*0.8, blue: colorsData.turfColor.blue*0.8)
+        return Color(colorData)
+    }
+    
+    /// 主要线条大小
+    public var mainLinesWidth: CGFloat {
+        return templateData.mainLinesSize.lineWidth
+    }
+    
+    
+    /// 球场内部大小
+    public var fieldInteriorSize: CGSize {
+        return CGSize(width: templateData.fieldInteriorRatio * fullWidth, height: templateData.fieldInteriorRatio * fullHeight)
+    }
+        
+    /// 四分之一球场的宽度
+    public var quarterFieldWidth: CGFloat {
+        return fullWidth/2
+    }
+    
+    /// 四分之一球场的高度
+    public var quarterFieldHeight: CGFloat {
+        switch templateData.type {
+        case .half:
+            return fullHeight
+        case .full:
+            return fullHeight/2
+        }
+    }
+    
+    /// 禁区起点X
+    public var penaltyAreaStartingX: CGFloat {
+        return templateData.penaltyAreaStartingXRatio * quarterFieldWidth
+    }
+    
+    /// 禁区顶点Y
+    public var penaltyAreaVerticalY: CGFloat {
+        return templateData.penaltyAreaVerticalYRatio * quarterFieldHeight
+    }
+    
+    /// 大禁区起点X
+    public var bigPenaltyAreaStartingX: CGFloat {
+        return templateData.bigPenaltyAreaStartingXRatio * quarterFieldWidth
+    }
+    
+    /// 大禁区顶点Y
+    public var bigPenaltyAreaVerticalY: CGFloat {
+        return templateData.bigPenaltyAreaVerticalYRatio * quarterFieldHeight
+    }
+    
+    /// 圆弧起点
+    public var arcStartingPoint: CGPoint {
+        return CGPoint(x: templateData.arcStartingXRation * quarterFieldWidth, y: bigPenaltyAreaVerticalY)
+    }
+    
+    /// 圆弧终点
+    public var arcEndPoint: CGPoint {
+        return CGPoint(x: fullWidth - arcStartingPoint.x, y: bigPenaltyAreaVerticalY)
+    }
+    
+    /// 圆弧预期的控制点Y
+    public var arcExpectedControlPointY: CGFloat {
+        return templateData.arcControlPointYRation * quarterFieldHeight
+    }
+    
+    /// 圆弧控制点
+    public var arcControlPoint: CGPoint {
+        return CGPoint.calculateExactControlPoint(startingPoint: arcStartingPoint, endPoint: arcEndPoint, expectedControlPoint: CGPoint(x: quarterFieldWidth, y: arcExpectedControlPointY))
+    }
+        
+    /// 门柱起点X
+    public var goalpostStartingX: CGFloat {
+        return templateData.goalpostStartingXRation * quarterFieldWidth
+    }
+    
+    /// 门柱顶点Y
+    public var goalpostVerticalY: CGFloat {
+        return templateData.goalpostVerticalYRation * quarterFieldHeight
+    }
+    
+    /// 点球点Y
+    public var penaltyPointY: CGFloat {
+        return templateData.penaltyPointYRation * quarterFieldHeight
+    }
+
+    public init(fieldData: FieldModels.FootballFieldModel, fullWidth: CGFloat) {
+        self.fieldData = fieldData
+        self.fullWidth = fullWidth
+    }
+}
+

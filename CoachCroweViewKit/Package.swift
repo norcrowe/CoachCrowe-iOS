@@ -14,6 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../CoachCroweBasic"),
+        .package(path: "../CoachCroweViewModels"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI", .upToNextMajor(from: "2.2.3"))
     ],
     targets: [
@@ -23,6 +24,7 @@ let package = Package(
             name: "CoachCroweViewKit",
             dependencies: [
                 .product(name: "CoachCroweBasic", package: "CoachCroweBasic"),
+                .product(name: "CoachCroweViewModels", package: "CoachCroweViewModels"),
                 .product(name: "SDWebImageSwiftUI", package: "SDWebImageSwiftUI")
             ],
             path: "Sources"

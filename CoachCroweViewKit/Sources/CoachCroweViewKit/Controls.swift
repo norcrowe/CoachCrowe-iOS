@@ -49,13 +49,13 @@ public func RoundedFillColorNextStepButton(text: String, fillColor: Color = .blu
 }
 
 /// 圆形+填充色的SFSymbol按钮
-public func CircledFillColorSFSymbolButton(sFSymbolName: String, fillColor: Color = Color(ColorSelection.secondary), sFSymbolColor: Color = Color(ColorSelection.primary), action: @escaping () -> Void) -> some View {
+public func CircledFillColorSFSymbolButton(sFSymbolName: String, fillColor: Color = Color(ColorSelection.secondary), sFSymbolColor: Color = Color(ColorSelection.primaryColor), action: @escaping () -> Void) -> some View {
     Button {
         action()
     } label: {
         Image(systemName: sFSymbolName)
             .font(.body.bold())
-            .foregroundColor(Color(ColorSelection.primary))
+            .colored(.primaryColor)
             .frame(width: MemberSizes.controlHeight, height: MemberSizes.controlHeight)
             .roundedColorBackground(color: Color(ColorSelection.secondary), radius: 99)
     }
@@ -67,5 +67,19 @@ public func HideKeyboardSpacer() -> some View {
         UIApplication.shared.endEditing()
     } label: {
         Color.clear
+    }
+}
+
+/// Side Bar Button
+public func SideBarButton(showSideBar: Binding<Bool>) -> some View {
+    Button {
+        withAnimation(.spring) {
+            showSideBar.wrappedValue.toggle()
+        }
+    } label: {
+        Image(systemName: "sidebar.squares.left")
+            .font(.title2)
+            .colored(.blue)
+            .frame(height: MemberSizes.controlSecondaryHeight)
     }
 }
