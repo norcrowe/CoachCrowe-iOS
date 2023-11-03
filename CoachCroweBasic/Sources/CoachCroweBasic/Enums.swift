@@ -56,42 +56,8 @@ public enum GlassEffectStyle {
 
 /// 登录界面状态
 public enum LoginViewState {
-    case inputPhoneNumber
-    case inputVerificationCode
+    case login
     case signup
-}
-
-/// 地区选项
-public enum Region {
-    case china
-    case portugal
-    
-    public var name: String {
-        switch self {
-        case .china:
-            return "China"
-        case .portugal:
-            return "Portugal"
-        }
-    }
-    
-    public var flag: String {
-        switch self {
-        case .china:
-            return "🇨🇳"
-        case .portugal:
-            return "🇵🇹"
-        }
-    }
-    
-    public var number: String {
-        switch self {
-        case .china:
-            return "+86"
-        case .portugal:
-            return "+351"
-        }
-    }
 }
 
 /// 颜色选项
@@ -114,12 +80,36 @@ public enum MyResult<T> {
 /// Hud State
 public enum HudState: Equatable {
     case progress
-    case completed(CompletedState, String)
+    case completed(CompletedState, String, (() -> Void)? = nil)
     
     public enum CompletedState {
         case successed
         case failed
     }
+    public static func == (lhs: HudState, rhs: HudState) -> Bool {
+        switch (lhs, rhs) {
+        case (.progress, .progress):
+            return true
+        case let (.completed(state1, message1, closure1), .completed(state2, message2, closure2)):
+            return state1 == state2 && message1 == message2 && areClosuresEqual(closure1, closure2)
+        default:
+            return false
+        }
+    }
+    
+    private static func areClosuresEqual(_ closure1: (() -> Void)?, _ closure2: (() -> Void)?) -> Bool {
+        if closure1 == nil && closure2 == nil {
+            return true
+        } else if let closure1 = closure1, let closure2 = closure2 {
+            return areFunctionPointersEqual(closure1, closure2)
+        }
+        return false
+    }
+    
+    private static func areFunctionPointersEqual(_ a: @escaping () -> Void, _ b: @escaping () -> Void) -> Bool {
+        return String(describing: a) == String(describing: b)
+    }
+
  }
 
 /// 震动选项
@@ -172,4 +162,10 @@ public enum UniversalSize: String, Codable {
             return 4
         }
     }
+}
+
+/// 球类
+public enum GameType: String, Codable {
+    case basketball
+    case football
 }

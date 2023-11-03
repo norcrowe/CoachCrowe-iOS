@@ -22,7 +22,7 @@ public extension View {
             .background(
                 color
                     .opacity(opacity)
-            )
+            )   
             .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
     }
     

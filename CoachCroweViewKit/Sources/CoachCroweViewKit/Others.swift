@@ -3,33 +3,6 @@ import SwiftUI
 import CoachCroweBasic
 import PhotosUI
 import SDWebImageSwiftUI
-
-/// 登录界面 TextField
-public struct LoginTextField<Content: View>: View {
-    var sfSymbolName: String
-    var content: () -> Content
-    
-    public init(sfSymbolName: String, content: @escaping () -> Content) {
-        self.sfSymbolName = sfSymbolName
-        self.content = content
-    }
-    
-    /// body
-    public var body: some View {
-        HStack(spacing: 5) {
-            Image(systemName: sfSymbolName)
-                .colored(.primaryColor)
-                .font(.title3.bold())
-                .padding(5)
-                .frame(width: MemberSizes.controlHeight, height: MemberSizes.controlHeight)
-                .roundedGlassEffectBackground(radius: 7.5, .secondary)
-            content()
-        }
-        .padding(7.5)
-        .roundedColorBackground(color: Color(ColorSelection.gray), radius: 15)
-    }
-}
-
 /// Image Picker
 public struct ImagePicker: UIViewControllerRepresentable {
     public typealias UIViewControllerType = PHPickerViewController

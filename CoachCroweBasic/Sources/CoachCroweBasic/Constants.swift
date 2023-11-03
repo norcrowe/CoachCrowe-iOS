@@ -30,6 +30,8 @@ public class MemberSizes {
 
     /// Side Bar 宽度
     static public let sideBarWidth: CGFloat = isPad ? 320 : 260
+    
+    static public let bottomSpacerHeight: CGFloat = safeAreaInsets.bottom == 0 ? 10 : 0
 }
 
 /// 判断是否为iPad设备
@@ -47,7 +49,7 @@ public class LCVersionClass {
 public class LCProfileClass {
     static public let className: String = "Profile"
     static public let phoneNumber: String = "phoneNumber"
-    static public let name: String = "name"
+    static public let id: String = "id"
     static public let photo: String = "photo"
     static public let user: String = "user"
 }

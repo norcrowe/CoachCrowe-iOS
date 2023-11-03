@@ -3,53 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>top-level-items</key>
-	<array>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>43</string>
-					<key>EndingLineNumber</key>
-					<string>8</string>
-					<key>StartingColumnNumber</key>
-					<string>23</string>
-					<key>StartingLineNumber</key>
-					<string>8</string>
-					<key>Timestamp</key>
-					<string>719573284.71851</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>CoachCroweBasic/Sources/CoachCroweBasic/Functions.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>sentVerificationCode</string>
-				<key>leading</key>
-				<string>    
-    /// 发送验证码
-    public static func </string>
-				<key>trailing</key>
-				<string>(phoneNumber: String, completion: @escaping (MyResult&lt;()&gt;) -&gt; Void) {
-        DispatchQueue.global().async {
-            LCSMSClient.requestShortMessage(mobilePhoneNumber: phoneNumber, templateName: "", signatureName: "") { (result) in
-</string>
-			</dict>
-			<key>title</key>
-			<string>修改</string>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>

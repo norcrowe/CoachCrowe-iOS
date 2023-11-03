@@ -7,11 +7,13 @@ import SwiftUI
 /// 主视图 View Model
 public class MasterViewModel: ObservableObject {
     @Published public var mainViewState: MainViewState = .library
-    @Published public var initializationState: InitializationState? = nil
+    @Published public var initializationState: InitializationState? = .initializing
     @Published public var showSideBar: Bool = false
     
     public init() {
-        DispatchQueue.global().asyncAfter(deadline: .now()+1) {
+        DispatchQueue.global().asyncAfter(deadline: .now()) {
+            LCUser.logOut()
+            self.initialization()
         }
     }
     
@@ -67,112 +69,99 @@ public class MasterViewModel: ObservableObject {
 
 /// 注册 View Model
 public class LoginViewModel: ObservableObject {
-    @Published public var viewState: LoginViewState = .inputPhoneNumber
+    @Published public var viewState: LoginViewState = .login
     @Published public var showImagePicker: Bool = false
-    @Published public var showCropView: Bool = false
-    @Published public var image: UIImage? = nil
-    @Published public var region: Region = .china
-    @Published public var phoneNumber: String = "18712618775"
-    @Published public var name: String = ""
-    @Published public var verificationCode: String = ""
     @Published public var hudState: HudState? = nil
-    @Published public var alert: AlertModel = .init()
-    public var fullPhoneNumber: String {
-        self.region.number + self.phoneNumber
-    }
-    
+    @Published public var image: UIImage? = nil
+    @Published public var id: String = "nor"
+    @Published public var password: String = "norindarkglasses"
+
     public init() {}
     
-    /// 发送验证码
-    public func sentVerificationCode() {
+    /// 密码注册
+    public func passwordSignup(completion: @escaping () -> Void) {
         withAnimation(.spring) {
             hudState = .progress
         }
-        LCNetworkServices.sentVerificationCode(phoneNumber: self.fullPhoneNumber) { result in
+        
+        /// 检测用户ID是否已被注册
+        LCNetworkServices.checkUserRegistered(id: self.id) { result in
             switch result {
-            case .success:
-                /// 判断用户是否已注册
-                DispatchQueue.main.async {
-                    LCNetworkServices.checkUserRegistered(phoneNumber: self.fullPhoneNumber) { result in
-                        switch result {
-                        case .success(let registered):
-                            DispatchQueue.main.async {
-                                withAnimation(.spring) {
-                                    self.hudState = nil
-                                    UIApplication.shared.endEditing()
-                                    self.viewState = registered ? .inputVerificationCode : .signup
-                                }
-                            }
-                        case .failure:
-                            DispatchQueue.main.async {
-                                withAnimation(.spring) {
-                                    self.hudState = .completed(.failed, "Send failed")
-                                }
-                            }
+            case .success(let registered):
+                if registered {
+                    DispatchQueue.main.async {
+                        self.hudState = .completed(.failed, "This ID has been registered")
+                    }
+                    return
+                }
+                
+                /// 开始注册
+                guard let imageData = self.image?.pngData() else {
+                    DispatchQueue.main.async {
+                        self.hudState = .completed(.failed, "Signup failed")
+                    }
+                    return
+                }
+
+                LCNetworkServices.passwordSignup(id: self.id, password: self.password, imageData: imageData) { result in
+                    switch result {
+                    case .success:
+                        DispatchQueue.main.async {
+                            self.hudState = .completed(.successed, "Signup successed", {
+                                completion()
+                            })
+                        }
+                    case .failure:
+                        DispatchQueue.main.async {
+                            self.hudState = .completed(.failed, "Signup failed")
                         }
                     }
                 }
+                
             case .failure:
                 DispatchQueue.main.async {
-                    withAnimation(.spring) {
-                        self.hudState = .completed(.failed, "Send failed")
-                    }
+                    self.hudState = .completed(.failed, "Signup failed")
                 }
+                return
             }
         }
+        
     }
     
-    /// 登录
-    public func login(completion: @escaping () -> Void) {
+    /// 密码登录
+    public func passwordLogin(completion: @escaping () -> Void) {
         withAnimation(.spring) {
-            self.hudState = .progress
+            hudState = .progress
         }
-        
-        LCNetworkServices.login(phoneNumber: self.fullPhoneNumber, verificationCode: verificationCode) { result in
+        /// 检查ID是否已注册
+        LCNetworkServices.checkUserRegistered(id: self.id) { result in
             switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    withAnimation(.spring) {
-                        self.hudState = nil
-                        UIApplication.shared.endEditing()
+            case .success(let registered):
+                if !registered {
+                    DispatchQueue.main.async {
+                        self.hudState = .completed(.failed, "This ID has not been registered")
                     }
-                    completion()
+                    return
                 }
+                
+                /// 开始登录
+                LCNetworkServices.passwordLogin(id: self.id, password: self.password) { result in
+                    switch result {
+                    case .success:
+                        DispatchQueue.main.async {
+                            self.hudState = nil
+                            completion()
+                        }
+                    case .failure:
+                        DispatchQueue.main.async {
+                            self.hudState = .completed(.failed, "Login failed")
+                        }
+                    }
+                }
+
             case .failure:
                 DispatchQueue.main.async {
-                    withAnimation(.spring) {
-                        self.hudState = .completed(.failed, "Verification failed")
-                    }
-                }
-            }
-        }
-    }
-    
-    /// 注册
-    public func signup(completion: @escaping () -> Void) {
-        withAnimation(.spring) {
-            self.hudState = .progress
-        }
-        
-        guard let imageData = ImageView(image: self.image!, size: CGSize(width: 512, height: 512)).snapshot().pngData() else {
-            self.hudState = .completed(.failed, "Signup failed")
-            return
-        }
-        
-        LCNetworkServices.signup(imageData: imageData, name: self.name, phoneNumber: fullPhoneNumber, verificationCode: self.verificationCode) { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    withAnimation(.spring) {
-                        self.hudState = .completed(.successed, "Signup successed")
-                    }
-                    completion()
-                }
-            case .failure:
-                DispatchQueue.main.async {
-                    withAnimation(.spring) {
-                        self.hudState = .completed(.failed, "Signup failed")
-                    }
+                    self.hudState = .completed(.failed, "Login failed")
                 }
             }
         }

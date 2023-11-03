@@ -17,13 +17,14 @@ struct LibraryView: View {
                     Button {
                         
                     } label: {
-                        Label("篮球", image: "basketball")
+                        Label(NSLocalizedString("Basketball", comment: ""), image: "basketball")
                             .colored(.primaryColor)
                     }
+                    
                     Button {
                         
                     } label: {
-                        Label("足球", image: "football")
+                        Label(NSLocalizedString("Football", comment: ""), image: "football")
                             .colored(.primaryColor)
                     }
                 } label: {

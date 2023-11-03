@@ -4,28 +4,23 @@
 "Start" = "开始";
 
 /// 登录/注册
-"Your Phone Number" = "你的手机号";
-"Enter phone number to begin verification" = "输入手机号从而开始验证";
-"Phone Number" = "手机号";
-"Send code" = "发送验证码";
-"Enter Verification Code" = "输入验证码";
-"The verification code has been sent to the phone number ending in %1$@" = "已发送验证码到尾号为%1$@的手机号";
-"Sign Up" = "注册";
-"Enter your picture and name" = "选择你的头像和呢称";
-"Code" = "验证码";
-"Pick Region Number" = "选择地区号码";
+"Your ID" = "你的账号";
+"ID" = "账号";
+"Password" = "密码";
+"Sign up" = "注册";
+"Log in" = "登录";
 
 /// Messages
 "Loading" = "正在加载";
 "Load failed" = "加载失败";
 "Initialization failed" = "初始化失败";
-"Verify your phone number" = "确认你的手机号";
-"Return to number input" = "返回输入号码界面";
 "Sure to do?" = "确认这样做?";
-"Send failed" = "发送失败";
-"Verification failed" = "验证失败";
+"This ID has not been registered" = "此ID尚未注册";
+"This ID has been registered" = "此ID已被注册";
 "Signup failed" = "注册失败";
-"Signup Successed" = "注册成功";
+"Signup successed" = "注册成功";
+"Login Successed" = "登录成功";
+"Login failed" = "登录失败";
 
 /// 其它
 "Name" = "名字";

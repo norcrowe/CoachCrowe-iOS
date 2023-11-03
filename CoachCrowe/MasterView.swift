@@ -8,12 +8,15 @@ struct MasterView: View {
     
     /// body
     var body: some View {
-        if masterViewModel.initializationState != nil {
-            InitializationView(masterViewModel: masterViewModel)
-                .transition(.offset(x: -MemberSizes.screenWidth).combined(with: .opacity))
-        } else {
-            MainView(masterViewModel: masterViewModel)
+        Group {
+            if masterViewModel.initializationState != nil {
+                InitializationView(masterViewModel: masterViewModel)
+                    .transition(.offset(x: -MemberSizes.screenWidth).combined(with: .opacity))
+            } else {
+                MainView(masterViewModel: masterViewModel)
+            }
         }
+        .animation(.spring, value: masterViewModel.initializationState)
     }
 }
 

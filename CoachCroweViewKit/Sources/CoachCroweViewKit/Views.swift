@@ -150,79 +150,10 @@ public struct ErrorView: View {
     }
 }
 
-/// RegionPicker
-public struct RegionPicker: View {
-    @Binding var region: Region
-    @Binding var show: Bool
-    let regions: [Region] = [.china, .portugal]
-    
-    public init(region: Binding<Region>, show: Binding<Bool>) {
-        _region = region
-        _show = show
-    }
-    
-    /// body
-    public var body: some View {
-        NavigationView {
-            List {
-                ForEach(regions, id: \.self) { region in
-                    Button {
-                        withAnimation(.spring) {
-                            self.region = region
-                            self.show = false
-                        }
-                    } label: {
-                        HStack {
-                            Text(region.flag + region.name)
-                                .colored(.primaryColor)
-                            Spacer()
-                            Text(region.number)
-                                .foregroundStyle(Color(ColorSelection.primaryColor))
-                                .padding(.vertical, 5)
-                                .padding(.horizontal, 10)
-                                .roundedColorBackground(color: .green, radius: 10, opacity: region.number == self.region.number ? 1 : 0)
-                        }
-                    }
-                }
-                .listRowBackground(Color(ColorSelection.secondary))
-            }
-            .navigationTitle(NSLocalizedString("Pick Your Region Number", comment: ""))
-            .navigationBarItems(trailing:
-                Button {
-                    show = false
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 14).bold())
-                        .colored(.primaryColor)
-                        .frame(width: MemberSizes.controlSecondaryHeight, height: MemberSizes.controlSecondaryHeight)
-                        .roundedColorBackground(color: Color(ColorSelection.secondary), radius: 99)
-                }
-            )
-
-        }
-
-
-    }
-}
-
 /// HudView
 struct HudView: View {
     @Binding var hudState: HudState?
-    private var messageWidth: CGFloat {
-        let bodyFontSize = UIFont.preferredFont(forTextStyle: .body).pointSize
-        switch hudState {
-        case .progress:
-            return 105
-        case .completed(_, let message):
-            let messageWidth = message.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: bodyFontSize)]).width
-            return messageWidth > 105 ? messageWidth : 105
-        case nil:
-            return 105
-        }
-    }
-    private var fullWidth: CGFloat {
-        return messageWidth + 70
-    }
+    @State private var isPresented: Bool = false
     
     init(hudState: Binding<HudState?>) {
         _hudState = hudState
@@ -233,29 +164,21 @@ struct HudView: View {
         ZStack {
             switch hudState {
             case .progress:
-                Zelda()
-            case .completed(let completedState, let message):
-                ZStack {
-                    Image(systemName: completedState == HudState.CompletedState.successed ? "checkmark" : "exclamationmark.circle")
-                        .font(.title3.bold())
-                        .hAlign(.leading)
-                        .padding(.leading, 15)
-                    Text(key: message)
-                        .font(.body.bold())
-                        .frame(width: messageWidth)
-                }
-                .colored(.gray)
-                .frame(width: fullWidth, height: 50)
-                .roundedColorBackground(color: .white, radius: 999)
-                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .top)))
-                .vAlign(.top)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                        withAnimation(.spring){
-                            hudState = nil
-                        }
+                ProgressView()
+            case .completed(let completedState, let title, let action):
+                Color.clear
+                    .alert(isPresented: $isPresented) {
+                        let messageText = completedState == .successed ? nil : Text(key: "Please try again")
+                        return Alert(title: Text(title), message: messageText, dismissButton: .default(Text("Done"), action: {
+                            withAnimation(.spring) {
+                                isPresented = false
+                                hudState = nil
+                                if let action {
+                                    action()
+                                }
+                            }
+                        }))
                     }
-                }
             case .none:
                 EmptyView()
             }
@@ -266,6 +189,15 @@ struct HudView: View {
                 .frame(width: MemberSizes.screenWidth, height: MemberSizes.screenHeight)
                 .ignoresSafeArea(.all)
         )
+        .onChange(of: hudState) { newState in
+            switch newState {
+            case .completed:
+                isPresented = true
+            case .progress, .none:
+                break
+            }
+        }
+        .animation(.spring, value: hudState)
     }
 }
 
@@ -562,6 +494,7 @@ public class BasketballFieldViews {
     }
 }
 
+/// 足球场视图集
 public class FootballFieldViews {
     
     /// 四分之一的足球场
@@ -704,6 +637,37 @@ public class FootballFieldViews {
                 .scaleEffect(footballFieldViewModel.templateData.fieldInteriorRatio)
             }
             .frame(width: footballFieldViewModel.fullWidth, height: footballFieldViewModel.fullHeight)
+        }
+    }
+}
+
+/// 球场
+public struct Field: View {
+    var type: GameType
+    var fieldData: Data
+    var width: CGFloat
+    
+    public init(type: GameType, fieldData: Data, width: CGFloat) {
+        self.type = type
+        self.fieldData = fieldData
+        self.width = width
+    }
+    
+    /// body
+    public var body: some View {
+        switch type {
+        case .basketball:
+            if let decodedFieldData = try? JSONDecoder().decode(FieldModels.BasketballFieldModel.self, from: fieldData) {
+                BasketballFieldViews.BasketballField(basketballFieldViewModel: BasketballFieldViewModel(fieldData: decodedFieldData, fullWidth: width))
+            } else {
+                ProgressView()
+            }
+        case .football:
+            if let decodedFieldData = try? JSONDecoder().decode(FieldModels.FootballFieldModel.self, from: fieldData) {
+                FootballFieldViews.FootballField(footballFieldViewModel: FootballFieldViewModel(fieldData: decodedFieldData, fullWidth: width))
+            } else {
+                ProgressView()
+            }
         }
     }
 }
@@ -942,3 +906,8 @@ class PathsAndShapes {
     }
 }
 
+/// 底部留白
+public func bottomSpacer() -> some View {
+    Color.clear
+        .frame(height: MemberSizes.bottomSpacerHeight)
+}

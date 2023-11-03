@@ -38,13 +38,12 @@ struct InitializationView: View {
                 WelcomeView(initializationState: $masterViewModel.initializationState)
                     .transition(.offset(x: -MemberSizes.screenWidth, y: 0))
             case .needLogin:
-                LoginView(masterViewModel: masterViewModel)
+                LoginOrSignupView(masterViewModel: masterViewModel)
             case .newVersionReleased(let versionID, let downloadURL):
                 NewVersionReleasedView(versionID: versionID, downloadURL: downloadURL)
             case .none:
                 EmptyView()
             }
-            
         }
         .fullBackgroundColor()
     }
@@ -79,6 +78,8 @@ struct WelcomeView: View {
                         .roundedColorBackground(color: .blue, radius: 15)
                 }
             }
+            
+            bottomSpacer()
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {

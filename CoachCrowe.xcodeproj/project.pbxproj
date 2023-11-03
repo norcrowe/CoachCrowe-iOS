@@ -10,7 +10,7 @@
 		8812BE2C2AD12E9D00FC5B03 /* NewVersionReleasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */; };
 		88130E5E2AE8FF1E00807F9D /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88130E5D2AE8FF1E00807F9D /* LibraryView.swift */; };
 		8822DBD22ADD332C00FE257F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8822DBD42ADD332C00FE257F /* InfoPlist.strings */; };
-		882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882838402AC6BC5400F1CFC3 /* LoginView.swift */; };
+		882838412AC6BC5400F1CFC3 /* LoginOrSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882838402AC6BC5400F1CFC3 /* LoginOrSignupView.swift */; };
 		882838472AC6C74300F1CFC3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 882838462AC6C74300F1CFC3 /* SDWebImageSwiftUI */; };
 		8846F4482AD8174500E90160 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8846F44A2AD8174500E90160 /* Localizable.strings */; };
 		8862A3962AF096410021A7E7 /* CoachCroweBasic in Frameworks */ = {isa = PBXBuildFile; productRef = 8862A3952AF096410021A7E7 /* CoachCroweBasic */; };
@@ -30,7 +30,7 @@
 		8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionReleasedView.swift; sourceTree = "<group>"; };
 		88130E5D2AE8FF1E00807F9D /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		8822DBD32ADD332C00FE257F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		882838402AC6BC5400F1CFC3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		882838402AC6BC5400F1CFC3 /* LoginOrSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignupView.swift; sourceTree = "<group>"; };
 		8846F4492AD8174500E90160 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		884DAE842AC51E190056B52A /* CoachCroweBasic */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoachCroweBasic; sourceTree = SOURCE_ROOT; };
 		884DAE852AC51E460056B52A /* CoachCroweViewModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoachCroweViewModels; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				88830D812AC5542C003312C6 /* InitializationView.swift */,
-				882838402AC6BC5400F1CFC3 /* LoginView.swift */,
+				882838402AC6BC5400F1CFC3 /* LoginOrSignupView.swift */,
 				8812BE2B2AD12E9D00FC5B03 /* NewVersionReleasedView.swift */,
 			);
 			path = Initialization;
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BA67D62AE4168D00F414D4 /* Tests.swift in Sources */,
-				882838412AC6BC5400F1CFC3 /* LoginView.swift in Sources */,
+				882838412AC6BC5400F1CFC3 /* LoginOrSignupView.swift in Sources */,
 				88BA67D22AE40D7000F414D4 /* Keys.swift in Sources */,
 				88B86ADA2AC3DBCC006B54E4 /* MasterView.swift in Sources */,
 				88130E5E2AE8FF1E00807F9D /* LibraryView.swift in Sources */,
